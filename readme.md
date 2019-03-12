@@ -588,5 +588,46 @@ print(say(say_please=True))  # Can you buy me a beer? Please! I am poor :(
 
 ```
 
+## 补充
+
+1. 字符串格式化
+
+* %格式化
+* str.format
+* 插值法(f"{}")，f-string
+* 格式化参数
+
+![%处理类型](pic/format.png)
+
+* 字符串格式控制
+
+__%[(name)][flag][width][.][precision]type__
+
+``` python
+#name:可为空，数字(占位),命名(传递参数名,不能以数字开头)以字典格式映射格式化，其为键名
+#flag:标记格式限定符号,包含+-#和0,+表示右对齐(会显示正负号),-左对齐,前面默认为填充空格(即默认右对齐)，0表示填充0，'#'表示八进制时前面补充0,16进制数填充0x,二进制填充0b
+#width:宽度(最短长度,包含小数点,小于width时会填充)
+#precision:小数点后的位数,与C相同
+#type:输入格式类型，请看上面
+```
+
+* format :
+__{[name][:][[fill]align][sign][#][0][width][,][.precision][type]}__
+
+```python
+用{}包裹name命名传递给format以命名=值 写法,非字典映射,其他和上面相同
+
+fill =  <any character>　　#fill是表示可以填写任何
+align =  "<" | ">" | "=" | "^"　　#align是对齐方式，<是左对齐， >是右对齐，^是居中对齐。
+sign  =  "+" | "-" | " "　　#sign是符号， +表示正号， -表示负号
+width =  integer　　#width是数字宽度，表示总共输出多少位数字
+precision =  integer　　#precision是小数保留位数
+type =  "b" | "c" | "d" | "e" | "E" | "f" | "F" | "g" | "G" | "n" | "o" | "s" | "x" | "X" | "%"　　#type是输出数字值是的表示方式
+比如b是二进制表示；比如E是指数表示；比如X是十六进制表示例子
+```
+
+* f-string 与str.format()类似
+
+2. 异常处理
 
 
